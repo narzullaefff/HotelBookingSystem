@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Драйвера для база данных-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- URL базы данных-->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mydbPostgres</property>
+        <!-- Имя пользователя база данных -->
+        <property name="hibernate.connection.username">username</property>
+        <!-- Пароль базы данных -->
+        <property name="hibernate.connection.password">password</property>
+
+        <!-- Диалект Hibernate для PostgresSQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Логирование SQL-запросов -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Автоматические создание и обновление таблицы -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Укажите ваши сущности -->
+        <mapping class="Entites.UserEntity"/>
+        <mapping class="Entites.BookingEntity"/>
+        <mapping class="Entites.HotelEntity"/>
+        <mapping class="Entites.ReviewEntity"/>
+        <mapping class="Entites.RoomEntity"/>
+
+    </session-factory>
+</hibernate-configuration>
